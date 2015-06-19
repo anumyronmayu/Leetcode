@@ -10,6 +10,7 @@ import com.google.gson.reflect.TypeToken;
 public class GsonTest1 {
 
 	public static void main(String[] args) {
+		
 		Gson gson = new Gson();
 
 		Student student1 = new Student();
@@ -18,6 +19,7 @@ public class GsonTest1 {
 		student1.setBirthDay(new Date());
 
 		// //////////////////////////////////////////////////////////
+		/*
 		System.out.println("----------简单对象之间的转化-------------");
 		// 简单的bean转为json
 		String s1 = gson.toJson(student1);
@@ -26,10 +28,10 @@ public class GsonTest1 {
 		// json转为简单Bean
 		Student student = gson.fromJson(s1, Student.class);
 		System.out.println("Json转为简单Bean===" + student);
-		// 结果:
-		// 简单Bean转化为Json==={"id":1,"name":"李坤","birthDay":"Jun 22, 2012 8:27:52 AM"}
-		// Json转为简单Bean===Student [birthDay=Fri Jun 22 08:27:52 CST 2012, id=1,
-		// name=李坤]
+		System.out.println(student.getId());
+		System.out.println(student.getName());
+		System.out.println(student.getBirthDay());
+		*/		
 		// //////////////////////////////////////////////////////////
 
 		Student student2 = new Student();
@@ -47,11 +49,12 @@ public class GsonTest1 {
 		list.add(student2);
 		list.add(student3);
 
-		System.out.println("----------带泛型的List之间的转化-------------");
+		
 		// 带泛型的list转化为json
 		String s2 = gson.toJson(list);
-		System.out.println("带泛型的list转化为json==" + s2);
+		System.out.println(s2);
 
+		
 		// json转为带泛型的list
 		List<Student> retList = gson.fromJson(s2,
 				new TypeToken<List<Student>>() {
@@ -65,21 +68,23 @@ public class GsonTest1 {
 		// Student [birthDay=Fri Jun 22 08:28:52 CST 2012, id=1, name=李坤]
 		// Student [birthDay=Fri Jun 22 08:28:52 CST 2012, id=2, name=曹贵生]
 		// Student [birthDay=Fri Jun 22 08:28:52 CST 2012, id=3, name=柳波]
-		
-		
+
+		/*
 		List<String> stringList = new ArrayList<String>();
 		stringList.add("AAA");
 		stringList.add("BBB");
 		stringList.add("CCC");
-		
+
 		String s3 = gson.toJson(stringList);
 		System.out.println("带泛型的list转化为json==" + s3);
-		
+
 		List<String> stringList2 = gson.fromJson(s3,
 				new TypeToken<List<String>>() {
 				}.getType());
-		
+
 		System.out.println(stringList2.get(1));
+
+		*/
 
 	}
 }
