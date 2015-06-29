@@ -34,7 +34,7 @@ public class Problem49 {
 
 			for(List<HashMap<Character, Integer>> cluster : listOfList){
 				
-				if(cluster){
+				if(cluster.get(0).equals(map)){
 					
 				}
 				
