@@ -35,12 +35,13 @@ public class JavaHashMap {
 			System.out.println(map.get(key));
 		}
 
-		// Method 4
+		// Method 4!!!
 		Set<Map.Entry<Integer, String>> entrySet = map.entrySet();
 		for (Map.Entry<Integer, String> entry : entrySet) {
 			System.out.println(entry.getKey());
 			System.out.println(entry.getValue());
 		}
+		
 	}
 
 }
