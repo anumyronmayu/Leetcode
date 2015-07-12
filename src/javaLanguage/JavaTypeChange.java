@@ -50,6 +50,9 @@ public class JavaTypeChange {
 
 		// char to int
 		ii = (int) cc;
+		
+		// int to binary
+		Integer.toBinaryString(i);
 	}
 
 }
