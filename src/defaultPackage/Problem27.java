@@ -1,8 +1,29 @@
 package defaultPackage;
 
 public class Problem27 {
-
+	
 	public static int removeElement(int[] nums, int val) {
+
+		int[] nums2 = new int[nums.length];
+
+		int index = 0;
+
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != val) {
+				nums2[index] = nums[i];
+				index++;
+			}
+		}
+
+		for (int j = 0; j < index; j++) {
+			nums[j] = nums2[j];
+		}
+
+		return (index);
+
+	}
+
+	public static int removeElement2(int[] nums, int val) {
 
 		int i = 0;
 		int j = nums.length - 1;
