@@ -53,6 +53,9 @@ public class JavaTypeChange {
 		
 		// int to binary
 		Integer.toBinaryString(i);
+		
+		String test = "0123";
+		System.out.println(Integer.parseInt(test));
 	}
 
 }

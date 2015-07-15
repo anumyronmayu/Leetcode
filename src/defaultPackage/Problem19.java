@@ -1,54 +1,38 @@
 package defaultPackage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Problem19 {
 
-	public static List<Integer> getRow(int rowIndex) {
+	public ListNode removeNthFromEnd(ListNode head, int n) {
 
-		int numRows = rowIndex + 1;
+		ListNode p = head;
+		int i = 0;
 
-		List<List<Integer>> results = new ArrayList<List<Integer>>();
-
-		List<Integer> list = new ArrayList<Integer>();
-
-		if (numRows == 0) {
-			return list;
+		while (p.next != null && i < n - 1) {
+			p = p.next;
+			i++;
 		}
 
-		list.add(1);
+		ListNode introNode = new ListNode(0);
 
-		results.add(list);
+		introNode.next = head;
 
-		for (int i = 1; i < numRows; i++) {
+		ListNode q = head;
+		ListNode pre = introNode;
 
-			List<Integer> list2 = new ArrayList<Integer>();
-
-			List<Integer> last = new ArrayList<Integer>();
-
-			last = results.get(results.size() - 1);
-
-			list2.add(1);
-
-			for (int j = 0; j <= last.size() - 2; j++) {
-
-				list2.add(last.get(j) + last.get(j + 1));
-
-			}
-
-			list2.add(1);
-
-			results.add(list2);
-
+		while (p.next != null) {
+			p = p.next;
+			q = q.next;
+			pre = pre.next;
 		}
 
-		return results.get(rowIndex);
+		pre.next = q.next;
+
+		return introNode.next;
+
 	}
 
 	public static void main(String[] args) {
-		
-		System.out.println(getRow(1));
+		// TODO Auto-generated method stub
 
 	}
 
