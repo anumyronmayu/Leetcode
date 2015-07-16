@@ -49,10 +49,10 @@ public class BinarySearch {
 
 	public static void main(String[] args) {
 
-		int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+		int nums[] = { 1 };
 
-		System.out.println(binarySearch(nums, 9));
-		System.out.println(binarySearchRecursive(nums, 9, 7, 0));
+		//System.out.println(binarySearch(nums, 9));
+		System.out.println(binarySearchRecursive(nums, 8, 0, 0));
 
 	}
 
